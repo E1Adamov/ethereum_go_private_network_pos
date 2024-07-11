@@ -35,7 +35,7 @@ services:
         condition: service_completed_successfully
 
   beacon-chain:
-    image: "gcr.io/prysmaticlabs/prysm/beacon-chain:v4.1.1"
+    image: "gcr.io/prysmaticlabs/prysm/beacon-chain:stable"
     command:
       - --datadir=/consensus/beacondata
       - --min-sync-peers=0
@@ -103,7 +103,7 @@ services:
       - ./execution/geth_password.txt:/execution/geth_password.txt
 
   validator:
-    image: "gcr.io/prysmaticlabs/prysm/validator:v4.1.1"
+    image: "gcr.io/prysmaticlabs/prysm/validator:stable"
     command:
       - --beacon-rpc-provider=beacon-chain:4000
       - --datadir=/consensus/validatordata
